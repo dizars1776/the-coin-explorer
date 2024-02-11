@@ -1,13 +1,17 @@
 {
     "name": "the-coin-explorer-client",
     "private": true,
-    "version": "0.0.1",
+    "version": "0.1.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
+    },
+    "engines": {
+        "node": ">=21.6.0",
+        "npm": ">=10.4.0"
     },
     "dependencies": {
         "@tanstack/react-query": "^5.20.1",

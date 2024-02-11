@@ -1,14 +1,19 @@
 {
     "name": "the-coin-explorer",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "install": "cd client && npm install && cd ../server && npm install",
+        "start": "cd server && npm start",
         "server": "cd server && npm run dev",
         "client": "cd client && npm run dev"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "engines": {
+        "node": ">=21.6.0",
+        "npm": ">=10.4.0"
+    }
 }
