@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom'
+import Error from '../../components/Error/'
 
 const CoinList = ({ listItems }) => {
+    if (!listItems) {
+        return <Error error={{ message: 'We are out of coins.' }} />
+    }
+
     return (
         listItems.map((item) => (
             <Link
                 key={item.id}
                 to={`/coins/${item.id}`}
-                className="flex flex-col sm:flex-row gap-2 sm:gap-8 items-center"
+                className="flex bg-cryptic-darker hover:bg-cryptic-lighter mx-4 p-4 md:p-8 rounded-3xl transition-colors flex-col sm:flex-row gap-2 sm:gap-8 items-center"
             >
                 <div className="w-24 h-24 sm:w-40 sm:h-40">
                     <img

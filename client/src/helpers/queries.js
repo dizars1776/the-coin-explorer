@@ -1,13 +1,15 @@
 import { getAllCoins, getOneCoinById } from '../api/axios'
 
-const allCoinsQuery = (page) => {
-    return {
-        queryKey: ['allCoins', page],
-        queryFn: () => getAllCoins(page),
-        keepPreviousData: true,
-        staleTime: 1000 * 60 * 30,
-    }
-}
+const allCoinsQuery = () => ({
+    queryKey: ['allCoins'],
+    queryFn: ({ pageParam }) => getAllCoins(pageParam),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, allPages) => {
+        const nextPage = lastPage.length ? allPages.length + 1 : undefined
+        return nextPage
+    },
+    staleTime: 1000 * 60 * 30,
+})
 
 const allCoinsLoader = (queryClient) => async ({ params }) => {
     const query = allCoinsQuery(params.page)

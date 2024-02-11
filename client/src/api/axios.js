@@ -5,12 +5,12 @@ const axiosOne = axios.create({
 })
 
 // Returns a list of coins, in desc order by market cap
-const getAllCoins = async (page = 1, perPage = 10) => {
+const getAllCoins = async (pageParam) => {
     try {
         const res = await axiosOne.get('/coins/markets', {
             params: {
-                page: page,
-                perPage: perPage,
+                page: pageParam,
+                perPage: 10,
             },
         })
         return res.data
