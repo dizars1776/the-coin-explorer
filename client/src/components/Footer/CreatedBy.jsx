@@ -1,7 +1,7 @@
 const CreatedBy = () => {
     return (
         <div className="flex items-center justify-center gap-1">
-            <span className="text-slate-200 text-xs mb-[0.3rem] cursor-default">created by</span>
+            <span className="text-slate-400 italic text-xs mb-[0.3rem] cursor-default">created by</span>
             <div className='relative group w-12 cursor-default opacity-90 hover:opacity-100'>
                 <a
                     target='_blank'

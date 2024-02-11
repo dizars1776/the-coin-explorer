@@ -4,6 +4,7 @@ import AllCoinsView from './views/AllCoinsView'
 import OneCoinView from './views/OneCoinView'
 import MainLayout from './layouts/MainLayout'
 import { oneCoinLoader } from './helpers/queries'
+import NotFound from './components/NotFound'
 
 const App = () => {
     const queryClient = useQueryClient()
@@ -17,7 +18,7 @@ const App = () => {
                     element={<OneCoinView />}
                     loader={oneCoinLoader(queryClient)}
                 />
-                <Route path={'/*'} element={<h1>Not Found!</h1>} />
+                <Route path={'/*'} element={<NotFound />} />
             </Routes>
         </MainLayout>
     )
