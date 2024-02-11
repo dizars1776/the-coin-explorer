@@ -7,3 +7,9 @@
         @apply bg-cryptic;
     }
 }
+
+@layer components {
+    .coin-description a {
+        @apply transition-colors text-emerald-600 hover:text-emerald-400;
+    }
+}

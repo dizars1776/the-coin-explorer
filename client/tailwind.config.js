@@ -18,9 +18,9 @@ export default {
                     '100%': { transform: 'translate(0%)' },
                 },
             },
-        },
-        fontFamily: {
-            pump: ['Sixtyfour'],
+            fontFamily: {
+                pump: ['Sixtyfour', 'sans-serif'],
+            },
         },
     },
     plugins: [],
