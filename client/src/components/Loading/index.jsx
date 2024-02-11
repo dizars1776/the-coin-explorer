@@ -1,6 +1,6 @@
 const Loading = () => {
     return (
-        <i className="text-xl text-orange-400 animate-pulse">Loading...</i>
+        <i className="text-xl text-[#d9b95b] animate-pulse">Loading...</i>
     )
 }
 

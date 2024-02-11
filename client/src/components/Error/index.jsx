@@ -1,6 +1,8 @@
 const Error = ({ error }) => {
     return (
-        <i>{`Error: ${error.message}`}</i>
+        <div className="flex w-full pl-8">
+            <i className="text-slate-400 text-lg">{`Error: ${error.message}`}</i>
+        </div>
     )
 }
 

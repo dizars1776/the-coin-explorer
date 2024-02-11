@@ -5,7 +5,7 @@ export default {
         extend: {
             colors: {
                 'cryptic': '#13182C',
-                'cryptic-lighter': '#363E50',
+                'cryptic-lighter': '#252e42',
                 'cryptic-darker': '#1C2436',
             },
             animation: {

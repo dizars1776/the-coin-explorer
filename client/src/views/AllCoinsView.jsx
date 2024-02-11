@@ -1,24 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
-import { useState } from 'react'
 import { allCoinsQuery } from '../helpers/queries'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
 import { CoinList } from '../components/Coins/'
 import Hero from '../components/Hero'
+import LoadMore from '../components/LoadMore'
 
 const AllCoinsView = () => {
-    const [page, setPage] = useState(1)
     const {
         data,
         error,
         fetchNextPage,
         hasNextPage,
-        isFetching,
         isFetchingNextPage,
         isError,
         isLoading,
-    } = useInfiniteQuery(allCoinsQuery(page))
+    } = useInfiniteQuery(allCoinsQuery())
 
     if (isLoading) return <Loading />
 
@@ -32,13 +30,11 @@ const AllCoinsView = () => {
                     {data?.pages.map((listGroup, index) => <CoinList key={index} listItems={listGroup} />)}
                 </div>
             </div>
-
-            <button
-                className='flex items-center justify-center text-white text-xl'
-                onClick={() => fetchNextPage()}
-            >
-                Load more
-            </button>
+            <LoadMore
+                fetchMoreHandler={fetchNextPage}
+                isFetchingNext={isFetchingNextPage}
+                hasNext={hasNextPage}
+            />
         </>
     )
 }

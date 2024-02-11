@@ -10,12 +10,13 @@ const getAllCoins = async (pageParam) => {
         const res = await axiosOne.get('/coins/markets', {
             params: {
                 page: pageParam,
-                perPage: 10,
+                perPage: 20,
             },
         })
         return res.data
     } catch (error) {
         console.error(error)
+        throw new Error('Seems like we have some difficulties right now, chill and try again later.')
     }
 }
 

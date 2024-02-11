@@ -18,13 +18,11 @@ const allCoinsLoader = (queryClient) => async ({ params }) => {
     )
 }
 
-const oneCoinQuery = (id) => {
-    return {
-        queryKey: ['oneCoin', id],
-        queryFn: () => getOneCoinById(id),
-        staleTime: 1000 * 60 * 30,
-    }
-}
+const oneCoinQuery = (id) => ({
+    queryKey: ['oneCoin', id],
+    queryFn: () => getOneCoinById(id),
+    staleTime: 1000 * 60 * 30,
+})
 
 const oneCoinLoader = (queryClient) => async ({ params }) => {
     const query = oneCoinQuery(params.id)
