@@ -1,10 +1,4 @@
-const Footer = () => {
-    return (
-        <footer className="mt-auto text-white p-4 flex flex-row justify-between items-center">
-            <h3>The Coin Explorer</h3>
-            <p>gnikolaos.gr</p>
-        </footer>
-    )
-}
+import Footer from './Footer'
+import CreatedBy from './CreatedBy'
 
-export default Footer
+export { Footer, CreatedBy }

@@ -22,7 +22,7 @@ const Coin = ({ coin }) => {
                     <div className='flex flex-col gap-8 lg:flex-1'>
                         <p dangerouslySetInnerHTML={{ __html: sanitizedCoinDesc }} className="text-slate-200 coin-description">
                         </p>
-                        <hr class="h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-30" />
+                        <hr className="h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-30" />
                         <ul className="flex flex-col gap-2 text-sm">
                             <li className="font-bold">
                                 Symbol: <span className="font-normal text-slate-200">{coin.symbol}</span>
